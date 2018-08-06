@@ -1,4 +1,4 @@
-{% set version = '0.6-6' %}
+{% set version = "0.7" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/gsubfn_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/gsubfn/gsubfn_{{ version }}.tar.gz
-  sha256: bbc5d29bb48e836407f81880aeb368544a54a5513dacb3411c9838180723dda4
+  sha256: 89351df9e65722d2862f26a0a3985666de3c86e8400808ced8a6eb6e165a4602
 
 build:
   number: 0
