@@ -52,10 +52,8 @@ about:
     and a version of transform that allows the RHS to refer to LHS used in the same
     transform.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - dpryan79
-    - johanneskoester
-    - bgruening
