@@ -5,7 +5,7 @@ Home: https://github.com/ggrothendieck/gsubfn
 
 Package license: GPL (>= 2)
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-gsubfn-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-gsubfn-feedstock/blob/main/LICENSE.txt)
 
 Summary: The gsubfn function is like gsub but can take a replacement  function or certain other objects instead of the replacement string. Matches and back references are input to the replacement function and  replaced by the function output.   gsubfn can be used to split strings  based on content rather than delimiters and for quasi-perl-style string  interpolation. The package also has facilities for translating formulas  to functions and allowing such formulas in function calls instead of  functions.  This can be used with R functions such as apply, sapply, lapply, optim, integrate, xyplot, Filter and any other function that  expects another function as an input argument or functions like cat or sql calls that may involve strings where substitution is desirable. There is also a facility for returning multiple objects from functions and a version of transform that allows the RHS to refer to LHS used in the same transform.
 
@@ -15,8 +15,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1223&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-gsubfn-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1223&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-gsubfn-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -39,23 +39,49 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `r-gsubfn` can be installed with:
+Once the `conda-forge` channel has been enabled, `r-gsubfn` can be installed with `conda`:
 
 ```
 conda install r-gsubfn
 ```
 
-It is possible to list all of the versions of `r-gsubfn` available on your platform with:
+or with `mamba`:
+
+```
+mamba install r-gsubfn
+```
+
+It is possible to list all of the versions of `r-gsubfn` available on your platform with `conda`:
 
 ```
 conda search r-gsubfn --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search r-gsubfn --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search r-gsubfn --channel conda-forge
+
+# List packages depending on `r-gsubfn`:
+mamba repoquery whoneeds r-gsubfn --channel conda-forge
+
+# List dependencies of `r-gsubfn`:
+mamba repoquery depends r-gsubfn --channel conda-forge
 ```
 
 
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -65,10 +91,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
